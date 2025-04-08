@@ -44,12 +44,6 @@ Mobile app development<br>
 Campus kiosks for quick reporting<br>
 Integration with student ID system<br>
 
-### 🛠 Our Tech Stack<br>
-Frontend: React + Tailwind CSS<br>
-Backend: JavaScript<br>
-Database: MongoDB<br>
-Storage: Firebase for images<br>
-Maps: Google Maps API<br>
 
 💡 Let's make our campus more connected!<br>
 Every returned item = one happy student! 😊
