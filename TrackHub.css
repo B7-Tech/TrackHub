@@ -18,11 +18,11 @@
 }
 
 body {
-    background: url('banner.png') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #f5f5f5;
     color: var(--dark-color);
     line-height: 1.6;
 }
+
 
 
 /* Header Styles */
@@ -202,10 +202,17 @@ nav a:hover, nav a.active {
 
 /* Items Sections */
 .items-section {
+    position: relative;
+    background: url('banner.png') no-repeat center center;
+    background-size: cover;
+    padding: 3rem 2rem;
     max-width: 1200px;
     margin: 3rem auto;
-    padding: 0 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
 }
+
 
 .items-section h2 {
     margin-bottom: 1.5rem;
