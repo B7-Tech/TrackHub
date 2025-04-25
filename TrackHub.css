@@ -86,6 +86,11 @@ nav a {
     font-weight: 500;
     transition: color 0.3s;
 }
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
 
 nav a:hover, nav a.active {
     color: var(--primary-color);
