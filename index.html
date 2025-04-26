@@ -13,56 +13,19 @@
             <i class="fas fa-search-location"></i>
             <h1>TrackHUB</h1>
         </div>
-        <!-- Sidebar toggle button -->
-<div id="sidebar">
-  <button id="theme-toggle">🌙</button>
-</div>
-<style>/* Dark theme */
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-/* Sidebar toggle button */
-#sidebar {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  background: #e0e0e0;
-  padding: 8px;
-  border-radius: 0 10px 10px 0;
-  z-index: 1000;
-}
-
-#theme-toggle {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  background: #222;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 8px;
-}
-
-#theme-toggle:hover {
-  background-color: #444;
-}
-</style>
         <nav>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#lost-items">Lost Items</a></li>
                 <li><a href="#found-items">Found Items</a></li>
                 <li><a href="#report">Report</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
             <button id="login-btn">Login</button>
             <button id="register-btn">Register</button>
         </div>
@@ -280,28 +243,6 @@
         </div>
     </div>
 
-    <script src="TrackHub.js">
-        <script>
-  const toggleBtn = document.getElementById('theme-toggle');
-
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', mode);
-  });
-
-  // Load saved theme on page load
-  window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-  });
-</script>
-
-    </script>
-
-</body>
-
+    <script src="TrackHub.js"></script>
 </body>
 </html>

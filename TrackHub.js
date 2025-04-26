@@ -77,6 +77,43 @@ const switchToLogin = document.getElementById('switch-to-login');
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Function to update theme icon
+function updateThemeIcon(isDarkMode) {
+    themeIcon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+// Function to set theme
+function setTheme(isDarkMode) {
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    updateThemeIcon(isDarkMode);
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
+
+// Theme toggle click handler
+themeToggle.addEventListener('click', () => {
+    const isDarkMode = !document.body.classList.contains('dark-mode');
+    setTheme(isDarkMode);
+});
+
+// Load saved theme on page load
+window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkMode = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    setTheme(isDarkMode);
+});
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches);
+    }
+});
+
 // Display sample items
 function displayItems() {
     // Clear existing items
@@ -95,29 +132,6 @@ function displayItems() {
         foundItemsGrid.appendChild(itemCard);
     });
 }
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    // Optional: save theme in localStorage
-    if (document.body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // Load saved theme on page load
-  window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-  });
-</script>
-
 
 // Create item card HTML
 function createItemCard(item, type) {
@@ -127,4 +141,88 @@ function createItemCard(item, type) {
     card.innerHTML = `
         <div class="item-image">
             <img src="${item.image}" alt="${item.name}">
-        </
+        </div>
+        <div class="item-details">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p><strong>Category:</strong> ${item.category}</p>
+            <p><strong>Location:</strong> ${item.location}</p>
+            <p><strong>Date:</strong> ${item.date}</p>
+            <p><strong>Contact:</strong> ${item.contact || 'N/A'}</p>
+        </div>
+    `;
+
+    return card;
+}
+
+// Loading Animation
+window.addEventListener('load', () => {
+    const loading = document.querySelector('.loading');
+    if (loading) {
+        setTimeout(() => {
+            loading.classList.add('hidden');
+        }, 1000);
+    }
+});
+
+// Scroll Animations
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.feature-card, .team-member, .stat-item, .contact-form');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        
+        if (elementTop < window.innerHeight && elementBottom > 0) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+    });
+};
+
+// Initial animation state
+document.querySelectorAll('.feature-card, .team-member, .stat-item, .contact-form').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+});
+
+// Add scroll event listener
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+
+// Animated Counter for About Stats
+function animateStats() {
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+        const text = counter.textContent.trim();
+        let target = 0;
+        let suffix = '';
+        if (text.endsWith('+')) {
+            target = parseInt(text.replace(/\D/g, ''));
+            suffix = '+';
+        } else if (text.endsWith('%')) {
+            target = parseInt(text.replace(/\D/g, ''));
+            suffix = '%';
+        } else if (!isNaN(parseInt(text))) {
+            target = parseInt(text);
+        } else {
+            return;
+        }
+        let current = 0;
+        const increment = Math.ceil(target / 60);
+        function updateCounter() {
+            if (current < target) {
+                current += increment;
+                if (current > target) current = target;
+                counter.textContent = current + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target + suffix;
+            }
+        }
+        updateCounter();
+    });
+}
+
+window.addEventListener('load', animateStats);
