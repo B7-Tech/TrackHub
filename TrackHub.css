@@ -73,11 +73,42 @@ header {
     font-size: 2rem;
     color: var(--primary-color);
 }
-
-nav ul {
+nav{
     display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    padding-right: 30px;
+} 
+
+nav ul li{
+    display: inline-block;
     list-style: none;
-    gap: 2rem;
+    margin:10px 20px;
+    word-spacing: 20px;
+}
+
+nav ul li a{
+    color:#3498db;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content:'';
+    width:0;
+    height:3px;
+    background:#3498db;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.5s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
 }
 
 nav a {
