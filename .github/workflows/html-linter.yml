@@ -17,23 +17,17 @@ jobs:
       - name: Install HTMLHint
         run: npm install -g htmlhint
 
-      - name: Create lint script
+      - name: Run HTMLHint
+        working-directory: TrackHub
         run: |
-          echo '#!/bin/bash
-          exit_code=0
+          echo "Checking HTML files..."
           for file in *.html; do
             if [ -f "$file" ]; then
               echo "Checking $file..."
-              if htmlhint "$file"; then
-                echo "✓ $file passed"
-              else
-                echo "✗ $file failed"
-                exit_code=1
+              if ! htmlhint "$file"; then
+                echo "Error in $file"
+                exit 1
               fi
             fi
           done
-          exit $exit_code' > lint.sh
-          chmod +x lint.sh
-
-      - name: Run HTMLHint
-        run: ./lint.sh
+          echo "All HTML files passed linting!"
