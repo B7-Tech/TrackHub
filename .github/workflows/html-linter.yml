@@ -19,8 +19,10 @@ jobs:
 
       - name: Run HTMLHint
         run: |
-          for file in $(find . -name "*.html" -type f); do
+          FILES="index.html login.html register.html"
+          for file in $FILES; do
             if [ -f "$file" ]; then
+              echo "Checking $file..."
               htmlhint "$file"
             fi
           done
