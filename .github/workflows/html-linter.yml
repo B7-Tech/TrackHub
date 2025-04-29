@@ -17,12 +17,23 @@ jobs:
       - name: Install HTMLHint
         run: npm install -g htmlhint
 
-      - name: Run HTMLHint
+      - name: Create lint script
         run: |
-          FILES="index.html login.html register.html"
-          for file in $FILES; do
+          echo '#!/bin/bash
+          exit_code=0
+          for file in *.html; do
             if [ -f "$file" ]; then
               echo "Checking $file..."
-              htmlhint "$file"
+              if htmlhint "$file"; then
+                echo "✓ $file passed"
+              else
+                echo "✗ $file failed"
+                exit_code=1
+              fi
             fi
           done
+          exit $exit_code' > lint.sh
+          chmod +x lint.sh
+
+      - name: Run HTMLHint
+        run: ./lint.sh
