@@ -18,4 +18,9 @@ jobs:
         run: npm install -g htmlhint
 
       - name: Run HTMLHint
-        run: htmlhint .
+        run: |
+          for file in $(find . -name "*.html" -type f); do
+            if [ -f "$file" ]; then
+              htmlhint "$file"
+            fi
+          done
