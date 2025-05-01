@@ -1,49 +1,62 @@
-# TrackHub <br>
-### 🔍 Lost & Found Campus Connect <br>
-A friendly platform to reunite lost items with their owners across campus <br>
+# TrackHub
 
-✨ Core Features <br>
+🔍 *Lost & Found Campus Connect*  
+A friendly platform to reunite lost items with their owners across campus and build a more responsible community.
 
-### 📝 Easy Reporting <br>
-Simple form to report lost/found items <br>
-Upload photos + add detailed descriptions <br>
-Categorize items (electronics, books, IDs, etc.) <br>
+---
 
-### 🔍 Smart Search System <br>
-Filter by category, location, date, or keywords <br>
-Save frequent searches (like "AirPods case") <br>
-Map view of recent lost/found hotspots <br>
+## ✨ Core Features
 
-### 🔔 Smart Alerts <br>
-Get instant notifications when your lost item is found <br>
-Set up custom alerts ("Notify me about lost black wallets") <br>
-Email + in-app notifications <br>
+### 📝 Easy Reporting
+- Simple and intuitive form to report lost or found items.  
+- Upload clear photos and provide detailed descriptions.  
+- Categorize items under electronics, books, ID cards, accessories, and more.  
+- Option to mark items as urgent or high value.
 
-### 💬 Secure Communication <br>
-Built-in anonymous messaging <br>
-Option to share contact info after verifying identity <br>
-Report suspicious users to admins <br>
+### 🔍 Smart Search System
+- Advanced filtering by category, location, date, or keywords.  
+- Save frequent searches like “AirPods case” or “Wallet.”  
+- Map view showing recent lost/found hotspots across the campus.  
+- Search suggestions to help narrow down results.
 
-### ✅ Verification System <br>
-Answer security questions to claim items <br>
-Admin approval for valuable items <br>
-QR code scanning for campus property <br>
+### 🔔 Smart Alerts
+- Get instant notifications when your lost item is reported as found.  
+- Set up custom alerts (e.g., “Notify me about lost black wallets”).  
+- Receive updates through email, SMS, and in-app notifications.  
+- Option to snooze or manage notification preferences.
 
-### 🏆 Reward System<br>
-Earn points for returning items<br>
-Unlock achievement badges<br>
-Top helpers get featured monthly<br>
+### 💬 Secure Communication
+- Built-in anonymous messaging system to protect user privacy.  
+- Option to share contact details after mutual agreement.  
+- Admin-monitored chats to prevent misuse or spam.  
+- Report suspicious users or activities directly to the admin team.
 
-### 👨‍💻 Admin Features<br>
-Dashboard to manage all reports<br>
-Resolve disputes between users<br>
-Generate monthly lost/found reports<br>
+### ✅ Verification System
+- Answer security questions to prove ownership of an item.  
+- Admin approval required for claiming high-value items.  
+- Use QR code scanning to verify campus property tags.  
+- Maintain a transparent claim history for accountability.
 
-### 📱 Future Plans<br>
-Mobile app development<br>
-Campus kiosks for quick reporting<br>
-Integration with student ID system<br>
+### 🏆 Reward System
+- Earn points and badges for reporting and returning lost items.  
+- Leaderboard featuring top helpers every month.  
+- Monthly rewards, certificates, or campus recognition.  
+- Bonus points for first-time users or early adopters.
 
+### 👨‍💻 Admin Features
+- Powerful dashboard to manage all reports and claims.  
+- Tools to resolve disputes and verify ownership details.  
+- Generate monthly or weekly analytics reports on lost/found trends.  
+- Bulk communication tools to notify students about critical items.
 
-💡 Let's make our campus more connected!<br>
-Every returned item = one happy student! 😊
+---
+
+## 📱 Future Plans
+- Develop a cross-platform mobile app (iOS + Android).  
+- Install campus kiosks for quick, offline reporting.  
+- Integrate with student ID systems for faster verification.  
+- Enable photo recognition to match lost/found items automatically.  
+- Expand to nearby institutions and public areas.
+
+## 💡 Let's make our campus more connected!
+Every returned item = one happy student!
