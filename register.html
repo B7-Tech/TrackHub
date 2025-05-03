@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic meta tags for character set and responsive layout -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - TrackHUB</title>
+
+    <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Internal CSS styles -->
     <style>
+        /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+        /* CSS Variables for colors, sizes, shadows */
         :root {
             --primary-color: #1a73e8;
             --primary-hover: #1557b0;
@@ -19,6 +26,7 @@
             --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
+        /* Reset margins and box-sizing, set base font */
         * {
             margin: 0;
             padding: 0;
@@ -26,6 +34,7 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Set body background and layout */
         body {
             min-height: 100vh;
             display: flex;
@@ -35,7 +44,7 @@
             line-height: 1.6;
         }
 
-        /* Header Styles */
+        /* ====================== Header ====================== */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -51,6 +60,7 @@
             z-index: 1000;
         }
 
+        /* Logo styles */
         .logo {
             display: flex;
             align-items: center;
@@ -58,16 +68,13 @@
             text-decoration: none;
             transition: transform 0.3s ease;
         }
-
         .logo:hover {
             transform: translateY(-1px);
         }
-
         .logo i {
             color: var(--primary-color);
             font-size: 28px;
         }
-
         .logo h1 {
             color: var(--primary-color);
             font-size: 24px;
@@ -75,6 +82,7 @@
             letter-spacing: -0.5px;
         }
 
+        /* Dark/light mode toggle button */
         .theme-btn {
             background: transparent;
             color: var(--primary-color);
@@ -86,23 +94,22 @@
             font-weight: 500;
             font-size: 0.95rem;
         }
-
         .theme-btn:hover {
             background: rgba(26, 115, 232, 0.1);
             transform: translateY(-1px);
         }
 
-        /* Main Content */
+        /* ====================== Main Section ====================== */
         main {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem;
-            margin-top: 60px;
+            margin-top: 60px; /* Push content below fixed header */
         }
 
-        /* Register Container */
+        /* Registration form container */
         .register-container {
             width: 100%;
             max-width: var(--container-width);
@@ -115,6 +122,7 @@
             overflow: hidden;
         }
 
+        /* Top border gradient effect */
         .register-container::before {
             content: '';
             position: absolute;
@@ -124,11 +132,11 @@
             height: 4px;
             background: linear-gradient(to right, var(--primary-color), #64b5f6);
         }
-
         .register-container:hover {
             transform: translateY(-2px);
         }
 
+        /* Form heading */
         .register-container h2 {
             color: var(--primary-color);
             text-align: center;
@@ -138,11 +146,11 @@
             letter-spacing: -0.5px;
         }
 
+        /* ====================== Form Styles ====================== */
         .form-group {
             margin-bottom: 1.8rem;
             position: relative;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 0.8rem;
@@ -150,7 +158,6 @@
             font-weight: 500;
             font-size: 0.95rem;
         }
-
         .form-group input,
         .form-group select {
             width: 100%;
@@ -161,13 +168,11 @@
             transition: all 0.3s ease;
             background: var(--bg-color);
         }
-
         .form-group input:hover,
         .form-group select:hover {
             border-color: #b3d4fc;
             background: white;
         }
-
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
@@ -175,7 +180,6 @@
             box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.15);
             background: white;
         }
-
         .form-group i {
             position: absolute;
             right: 16px;
@@ -183,7 +187,6 @@
             color: #94a3b8;
             pointer-events: none;
         }
-
         .form-group select {
             appearance: none;
             padding-right: 40px;
@@ -193,6 +196,7 @@
             background-position: right 16px center;
         }
 
+        /* Submit button */
         .register-btn {
             width: 100%;
             padding: 14px;
@@ -208,7 +212,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .register-btn::before {
             content: '';
             position: absolute;
@@ -220,17 +223,16 @@
             transform: translateX(-100%);
             transition: transform 0.5s ease;
         }
-
         .register-btn:hover {
             background: var(--primary-hover);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
         }
-
         .register-btn:hover::before {
             transform: translateX(100%);
         }
 
+        /* Link to login page */
         .login-link {
             text-align: center;
             margin-top: 2rem;
@@ -239,7 +241,6 @@
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
         }
-
         .login-link a {
             color: var(--primary-color);
             text-decoration: none;
@@ -247,13 +248,12 @@
             margin-left: 4px;
             transition: all 0.3s ease;
         }
-
         .login-link a:hover {
             color: var(--primary-hover);
             text-decoration: underline;
         }
 
-        /* Dark mode */
+        /* ====================== Dark Mode ====================== */
         .dark-mode {
             --primary-color: #4a9eff;
             --primary-hover: #6cb0ff;
@@ -261,44 +261,38 @@
             --bg-color: #1a1a2e;
             --border-color: rgba(255, 255, 255, 0.1);
         }
-
         .dark-mode body {
             background: linear-gradient(135deg, var(--bg-color) 0%, #16162c 100%);
         }
-
         .dark-mode header {
             background: rgba(30, 30, 46, 0.95);
             border-bottom: 1px solid var(--border-color);
         }
-
         .dark-mode .register-container {
             background: #1e1e2e;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
-
         .dark-mode .form-group input,
         .dark-mode .form-group select {
             background: #2d2d3e;
             color: white;
         }
-
         .dark-mode .form-group input:hover,
         .dark-mode .form-group input:focus,
         .dark-mode .form-group select:hover,
         .dark-mode .form-group select:focus {
             background: #33334c;
         }
-
         .dark-mode .form-group i {
             color: #64748b;
         }
-
         .dark-mode .form-group select {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234a9eff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
         }
     </style>
 </head>
 <body>
+    <!-- Header with logo and theme toggle -->
     <header>
         <a href="index.html" class="logo">
             <i class="fas fa-search-location"></i>
@@ -307,30 +301,36 @@
         <button id="theme-toggle" class="theme-btn">🌙</button>
     </header>
 
+    <!-- Main registration form section -->
     <main>
         <div class="register-container">
             <h2>Create Account</h2>
             <form id="register-form">
+                <!-- Full Name input -->
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" required placeholder="Enter your full name">
                     <i class="fas fa-user"></i>
                 </div>
+                <!-- Email input -->
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" required placeholder="Enter your email">
                     <i class="fas fa-envelope"></i>
                 </div>
+                <!-- Password input -->
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" required placeholder="Create a password">
                     <i class="fas fa-lock"></i>
                 </div>
+                <!-- Confirm Password input -->
                 <div class="form-group">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" required placeholder="Confirm your password">
                     <i class="fas fa-lock"></i>
                 </div>
+                <!-- Role select dropdown -->
                 <div class="form-group">
                     <label for="role">I am a:</label>
                     <select id="role" required>
@@ -340,25 +340,29 @@
                     </select>
                     <i class="fas fa-user-tag"></i>
                 </div>
+                <!-- Submit button -->
                 <button type="submit" class="register-btn">Create Account</button>
             </form>
+            <!-- Link to login page -->
             <div class="login-link">
                 <p>Already have an account? <a href="login.html">Sign in</a></p>
             </div>
         </div>
     </main>
 
+    <!-- JavaScript for theme toggle and form handling -->
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         const registerForm = document.getElementById('register-form');
 
+        // Toggle dark mode on button click
         toggleBtn.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark-mode');
             const mode = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
             localStorage.setItem('theme', mode);
         });
 
-        // Load saved theme
+        // Load saved theme from localStorage on page load
         window.addEventListener('load', () => {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
@@ -366,26 +370,27 @@
             }
         });
 
-        // Handle registration form submission
+        // Handle form submission
         registerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default form submission
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
             const role = document.getElementById('role').value;
 
+            // Check if passwords match
             if (password !== confirmPassword) {
                 alert('Passwords do not match!');
                 return;
             }
             
-            // Here you would typically send this data to your backend
+            // Simulate sending data to backend (you would replace this with real logic)
             console.log('Registration attempt:', { name, email, password, role });
             
-            // For now, just redirect to login page
+            // Redirect to login page after successful registration
             window.location.href = 'login.html';
         });
     </script>
 </body>
-</html> 
+</html>
