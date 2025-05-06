@@ -4,14 +4,502 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - TrackHUB</title>
-    <link rel="stylesheet" href="TrackHub.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #1a73e8;
+            --primary-hover: #1557b0;
+            --text-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --border-color: #dee2e6;
+            --container-width: 1200px;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles - Matching Dashboard */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo i {
+            color: var(--primary-color);
+            font-size: 28px;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-btn {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .theme-btn:hover {
+            background: rgba(26, 115, 232, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Add auth button styles */
+        .auth-btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            background: transparent;
+            color: #1a73e8;
+            border: 2px solid #1a73e8;
+        }
+
+        .register-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+        }
+
+        .login-btn:hover {
+            background: rgba(26, 115, 232, 0.1);
+        }
+
+        .register-btn:hover {
+            background: #1557b0;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .about-hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .about-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-hero-content p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 4rem 2rem;
+            background: white;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 2;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .mission-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .mission-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            font-size: 2.5rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 5px solid var(--primary-color);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e0e0e0;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode body {
+            background: var(--bg-color);
+        }
+
+        .dark-mode header {
+            background: rgba(30, 30, 46, 0.95);
+        }
+
+        .dark-mode .team-card,
+        .dark-mode .contact-form {
+            background: #1e1e2e;
+        }
+
+        .dark-mode .contact-item {
+            background: #2d2d3e;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mission-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="loading">
-        <div class="loading-spinner"></div>
-    </div>
-
     <header>
         <a href="index.html" class="logo">
             <i class="fas fa-search-location"></i>
@@ -22,16 +510,13 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#lost-items">Lost Items</a></li>
                 <li><a href="index.html#found-items">Found Items</a></li>
-                <li><a href="index.html#report">Report</a></li>
                 <li><a href="about.html" class="active">About</a></li>
             </ul>
         </nav>
-        <div class="auth-buttons">
-            <button id="theme-toggle" class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button id="login-btn">Login</button>
-            <button id="register-btn">Register</button>
+        <div class="header-buttons">
+            <button class="theme-btn">🌙</button>
+            <a href="login.html" class="auth-btn login-btn">Login</a>
+            <a href="register.html" class="auth-btn register-btn">Register</a>
         </div>
     </header>
 
@@ -39,121 +524,127 @@
         <section class="about-hero">
             <div class="about-hero-content">
                 <h1>About TrackHUB</h1>
-                <p>Connecting Lost Items with Their Owners</p>
+                <p>Connecting Lost Items with Their Rightful Owners</p>
             </div>
         </section>
 
-        <section class="about-mission">
-            <div class="mission-content">
-                <h2>Our Mission</h2>
-                <p>TrackHUB is dedicated to creating a seamless platform for students and staff to report and recover lost items on campus. We believe in fostering a community where lost items find their way back to their owners.</p>
+        <section class="mission-section">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>To Connect</h3>
+                    <p>Seamlessly connect lost items with their rightful owners using innovative technology and a dedicated community.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>To Support</h3>
+                    <p>Provide unwavering support and assistance to users in their time of need, ensuring a compassionate and helpful experience.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>To Innovate</h3>
+                    <p>Continuously innovate and improve our platform, incorporating user feedback and the latest technological advancements.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>To Educate</h3>
+                    <p>Educate the community on the importance of item safety and the role of technology in recovering lost belongings.</p>
+                </div>
             </div>
         </section>
 
-        <section class="about-features">
-            <h2>Why Choose TrackHUB?</h2>
+        <section class="features-section">
+            <h2 class="section-title">Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Quick Recovery</h3>
-                    <p>Our efficient system helps you find your lost items faster than traditional methods.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Secure Platform</h3>
-                    <p>Your personal information and item details are protected with advanced security measures.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-user-friends"></i>
                     <h3>Community Driven</h3>
-                    <p>Join a community of helpful individuals working together to return lost items.</p>
+                    <p>Join a passionate community of users dedicated to helping each other recover lost items.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Friendly</h3>
-                    <p>Access TrackHUB from any device, anywhere on campus.</p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location Based</h3>
+                    <p>Utilize advanced location tracking to find lost items quickly and efficiently.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Access round-the-clock support from our dedicated team, ready to assist you anytime.</p>
                 </div>
             </div>
         </section>
 
-        <section class="about-team">
-            <h2>Our Team</h2>
+        <section class="team-section">
+            <h2 class="section-title">Our Team</h2>
             <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="Bhumika.jpg" alt="Bhumika" width="190">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="Bhumika.jpg" alt="Bhumika">
                     </div>
                     <h3>Bhumika</h3>
                     <p>Team Lead Developer</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/bhumika78" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Bhumika-78" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bhumika78" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Bhumika-78" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="ME.jpeg" alt="Ayushi Upadhyay" width="190">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="ME.jpeg" alt="Ayushi Upadhyay">
                     </div>
                     <h3>Ayushi Upadhyay</h3>
                     <p>Lead Developer</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/ayushi-upadhyay-a456b626a" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/ayushi001-svg" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ayushi-upadhyay-a456b626a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/ayushi001-svg" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="vanshika.png" alt="Vanshika Dhiman" width="180">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="vanshika.png" alt="Vanshika Dhiman">
                     </div>
                     <h3>Vanshika Dhiman</h3>
                     <p>App Developer</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/vanshika-dhiman-3aa34a310/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/code-ship0901" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/vanshika-dhiman-3aa34a310/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/code-ship0901" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="parul.png" alt="team member" width="190">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="parul.png" alt="Parul Sharma">
                     </div>
                     <h3>Parul Sharma</h3>
                     <p>Web Designer</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/parulsharma002" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Parul-byte" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/parulsharma002" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Parul-byte" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="about-stats">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-box-open"></i></div>
-                    <h3 class="stat-number">1000+</h3>
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
                     <p>Items Recovered</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="stat-number">5000+</h3>
+                <div class="stat-card">
+                    <div class="stat-number">5000+</div>
                     <p>Active Users</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-percentage"></i></div>
-                    <h3 class="stat-number">95%</h3>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
                     <p>Success Rate</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-headset"></i></div>
-                    <h3 class="stat-number">24/7</h3>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
                     <p>Support Available</p>
                 </div>
             </div>
         </section>
 
-        <section class="about-contact">
-            <h2>Get in Touch</h2>
-            <div class="contact-container">
+        <section class="contact-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -165,7 +656,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>University Campus, Building A, Room 101</p>
+                        <p>University Campus, Building A</p>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -176,44 +667,64 @@
                         <input type="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit">Send Message</button>
+                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#lost-items">Lost Items</a></li>
-                    <li><a href="index.html#found-items">Found Items</a></li>
-                    <li><a href="index.html#report">Report</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: TrackHUB@campus.edu</p>
-                <p>Phone: 7050013249</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 TrackHUB. All rights reserved.</p>
-        </div>
-    </footer>
+    <script>
+        // Theme Toggle
+        const themeBtn = document.querySelector('.theme-btn');
+        
+        themeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            themeBtn.textContent = document.documentElement.classList.contains('dark-mode') ? '☀️' : '🌙';
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
 
-    <script src="TrackHub.js"></script>
+        // Load saved theme
+        window.addEventListener('load', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+                themeBtn.textContent = '☀️';
+            }
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const value = stat.innerText;
+                let current = 0;
+                const target = parseInt(value);
+                const increment = target / 50;
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        stat.innerText = Math.ceil(current) + (value.includes('+') ? '+' : '');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        stat.innerText = value;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for stats animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.stats-section'));
+    </script>
 </body>
-</html> 
+</html>
