@@ -960,6 +960,73 @@
         if (statsSection) {
             observer.observe(statsSection);
         }
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-container input');
+        const categorySelect = document.querySelector('.search-container select');
+        const searchButton = document.querySelector('.search-container button');
+        const lostItemsGrid = document.getElementById('lost-items-grid');
+        const foundItemsGrid = document.getElementById('found-items-grid');
+
+        function filterItems() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedCategory = categorySelect.value;
+
+            // Function to check if an item matches the search criteria
+            function itemMatches(item) {
+                const itemName = item.querySelector('h3').textContent.toLowerCase();
+                const itemDescription = item.querySelector('p:last-of-type').textContent.toLowerCase();
+                const itemCategory = item.dataset.category || 'other'; // Default to 'other' if category not set
+
+                const matchesSearch = itemName.includes(searchTerm) || 
+                                   itemDescription.includes(searchTerm);
+                const matchesCategory = selectedCategory === 'all' || 
+                                     itemCategory === selectedCategory;
+
+                return matchesSearch && matchesCategory;
+            }
+
+            // Filter lost items
+            const lostItems = lostItemsGrid.querySelectorAll('.item-card');
+            lostItems.forEach(item => {
+                if (itemMatches(item)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Filter found items
+            const foundItems = foundItemsGrid.querySelectorAll('.item-card');
+            foundItems.forEach(item => {
+                if (itemMatches(item)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Add event listeners for search
+        searchInput.addEventListener('input', filterItems);
+        categorySelect.addEventListener('change', filterItems);
+        searchButton.addEventListener('click', filterItems);
+
+        // Add data-category attributes to existing item cards
+        const itemCards = document.querySelectorAll('.item-card');
+        itemCards.forEach(card => {
+            const itemName = card.querySelector('h3').textContent.toLowerCase();
+            if (itemName.includes('macbook') || itemName.includes('airpods') || 
+                itemName.includes('watch')) {
+                card.dataset.category = 'electronics';
+            } else if (itemName.includes('id card')) {
+                card.dataset.category = 'ids';
+            } else if (itemName.includes('textbook')) {
+                card.dataset.category = 'books';
+            } else {
+                card.dataset.category = 'other';
+            }
+        });
     </script>
 </body>
 </html>
