@@ -224,12 +224,12 @@ function animateStats() {
                 current += increment;
                 if (current > target) current = target;
                 counter.textContent = current + suffix;
-                requestAnimationFrame(updateCounter);
+                requestAnimationFrame(updateCounter); //Smooth animation
             } else {
                 counter.textContent = target + suffix;
             }
         }
-        updateCounter();
+        updateCounter(); // Start animation
     });
 }
 // Run animated counters when the page loads
