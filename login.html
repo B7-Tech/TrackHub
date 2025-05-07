@@ -320,46 +320,52 @@
         </div>
     </main>
 
-    <script>
-        // Get theme toggle button and login form
+   <script>
+    // Wait for the DOM to load
+    window.addEventListener('DOMContentLoaded', () => {
         const toggleBtn = document.getElementById('theme-toggle');
         const loginForm = document.getElementById('login-form');
 
-        // Add click event to toggle dark mode and save preference
-        toggleBtn.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark-mode');
-            const mode = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', mode);
-        });
+        // === Theme Toggle ===
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark-mode');
+                const currentTheme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+            });
 
-        // On page load, apply saved theme from localStorage
-        window.addEventListener('load', () => {
+            // Apply saved theme
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-mode');
             }
-        });
+        }
 
-        // Handle login form submission
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent page reload
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
+        // === Login Form Handling ===
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
 
-            // Check if fields are filled
-            if (!email || !password) {
-                alert('Please fill in all fields.');
-                return;
-            }
+                const emailInput = document.getElementById('email');
+                const passwordInput = document.getElementById('password');
+                const email = emailInput?.value.trim();
+                const password = passwordInput?.value.trim();
 
-            // Log login attempt to console (for development)
-            console.log('Login attempt:', { email, password });
+                if (!email || !password) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
 
-            // Simulate network delay and redirect to index.html
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 500);
-        });
-    </script>
+                console.log('Login attempt:', { email, password });
+
+                // Simulate login process
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 500);
+            });
+        }
+    });
+</script>
 </body>
 </html>
+    <

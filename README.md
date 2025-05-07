@@ -1,40 +1,49 @@
-# 📦 TrackHub
+A simple website to help people report and find lost or found items. Built using only HTML, CSS, and JavaScript — no backend or database.
 
-🔍 *Lost & Found Campus Connect*  
-A user-friendly platform designed to help students report, find, and reclaim lost items on campus — while building a stronger and more responsible community.
+🌐 Features
+📤 Submit details of lost or found items
 
----
+🔍 View items reported by others
 
-## ✨ Features
+🖼️ Upload image (if using local preview)
 
-### 📝 Easy Reporting
-- Simple and intuitive form to report lost or found items.
-- Upload clear photos and provide detailed descriptions.
-- Categorize items: Electronics, Books, ID Cards, Accessories, etc.
-- Tag reports with campus locations for better discovery.
+📁 Simple, clean layout with responsive design
 
-### 🔍 Smart Search System
-- Filter by category, location, date, or keywords.
-- Save frequent searches (e.g., "AirPods case", "Wallet").
+📦 Data stored temporarily using browser LocalStorage
 
+📁 Project Structure
+bash
+Copy
+Edit
+lost-and-found/
+├── index.html        # Main page
+├── style.css         # Styling
+├── script.js         # JavaScript functionality
+└── README.md         # Project documentation
+🚀 How to Run
+Download or clone the repository:
 
----
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/lost-and-found.git
 
-## 🚀 Future Plans
+Open index.html in your browser:
 
-- Cross-platform mobile app (iOS & Android).
-- Campus kiosks for quick offline reporting.
-- Student ID integration for faster verification.
-- AI photo recognition for smart item matching.
-- Expand to nearby campuses and public spaces.
-- Add multi-language support for diverse communities.
-- 
----
+Just double-click the file
 
-## 💡 Vision
+Or right-click and select "Open with browser"
 
-We believe every lost item has a story — and a rightful owner.  
-*TrackHub* aims to bring students together through honesty, empathy, and shared responsibility.  
-Let’s make lost-and-found smarter, faster, and more connected.
+💡 No server or setup required — it's a static site!
 
-> *Every returned item = One happy student.*
+✨ Future Ideas
+Add categories or filters
+
+Allow users to edit/delete posts
+
+Add date and location tagging
+
+Connect to a backend for real-time sharing
+
+📄 License
+This project is open source and free to use.
