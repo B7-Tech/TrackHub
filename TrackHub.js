@@ -232,5 +232,5 @@ function animateStats() {
         updateCounter();
     });
 }
-
+// Run animated counters when the page loads
 window.addEventListener('load', animateStats);
