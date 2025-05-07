@@ -1,49 +1,49 @@
-A simple website to help people report and find lost or found items. Built using only HTML, CSS, and JavaScript .
+# TrackHub <br>
+### 🔍 Lost & Found Campus Connect <br>
+A friendly platform to reunite lost items with their owners across campus <br>
 
-🌐 Features
-📤 Submit details of lost or found items
+✨ Core Features <br>
 
-🔍 View items reported by others
+### 📝 Easy Reporting <br>
+Simple form to report lost/found items <br>
+Upload photos + add detailed descriptions <br>
+Categorize items (electronics, books, IDs, etc.) <br>
 
-🖼️ Upload image (if using local preview)
+### 🔍 Smart Search System <br>
+Filter by category, location, date, or keywords <br>
+Save frequent searches (like "AirPods case") <br>
 
-📁 Simple, clean layout with responsive design
+### 🔔 Smart Alerts <br>
+Get instant notifications when your lost item is found <br>
+Set up custom alerts ("Notify me about lost black wallets") <br>
+Email + in-app notifications <br>
 
-📦 Data stored temporarily using browser LocalStorage
+### 💬 Secure Communication <br>
+Built-in anonymous messaging <br>
+Option to share contact info after verifying identity <br>
+Report suspicious users to admins <br>
 
-📁 Project Structure
-bash
-Copy
-Edit
-lost-and-found/
-├── index.html        # Main page
-├── style.css         # Styling
-├── script.js         # JavaScript functionality
-└── README.md         # Project documentation
-🚀 How to Run
-Download or clone the repository:
+### ✅ Verification System <br>
+Answer security questions to claim items <br>
+Admin approval for valuable items <br>
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/lost-and-found.git
+### 👨‍💻 Admin Features<br>
+Dashboard to manage all reports<br>
+Resolve disputes between users<br>
+Generate monthly lost/found reports<br>
 
-Open index.html in your browser:
+### 📱 Future Plans<br>
+Mobile app development<br>
+Campus kiosks for quick reporting<br>
+Integration with student ID system<br>
+Map view of recent lost/found hotspots <br>
 
-Just double-click the file
+### 🏆 Future Plans for Reward System<br>
+Earn points for returning items<br>
+Unlock achievement badges<br>
+Top helpers get featured monthly<br>
 
-Or right-click and select "Open with browser"
-
-💡 No server or setup required — it's a static site!
-
-✨ Future Ideas
-Add categories or filters
-
-Allow users to edit/delete posts
-
-Add date and location tagging
-
-Connect to a backend for real-time sharing
-
-📄 License
-This project is open source and free to use.
+💡 Let's make our campus more connected!<br>
+Every returned item = one happy student! 😊 <br>
+<br>
+A simple website to help people report and find lost or found items. Built using only HTML, CSS, and JavaScript — no backend or database.
