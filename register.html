@@ -366,7 +366,8 @@ header {
     </main>
 
     <!-- JavaScript -->
-<script>
+
+        <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const registerForm = document.getElementById('register-form');
 
@@ -394,35 +395,3 @@ header {
         const savedTheme = localStorage.getItem('theme') || 'light';
         applyTheme(savedTheme);
     });
-
-<script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const registerForm = document.getElementById('register-form');
-
-    // Set theme icon
-    function updateToggleIcon(mode) {
-        toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
-    }
-
-    // Apply theme
-    function applyTheme(mode) {
-        document.documentElement.classList.toggle('dark-mode', mode === 'dark');
-        updateToggleIcon(mode);
-        localStorage.setItem('theme', mode);
-    }
-
-    // Theme toggle event
-    toggleBtn.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.contains('dark-mode');
-        const newMode = isDark ? 'light' : 'dark';
-        applyTheme(newMode);
-    });
-
-    // On page load
-    window.addEventListener('DOMContentLoaded', () => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        applyTheme(savedTheme);
-    });
-</script>
-</body>
-</html>
