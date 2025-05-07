@@ -395,3 +395,41 @@ header {
         const savedTheme = localStorage.getItem('theme') || 'light';
         applyTheme(savedTheme);
     });
+
+            <script>
+    // Form submission
+    registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Input values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        const role = document.getElementById('role').value;
+        const hasAcceptedTerms = document.getElementById('terms').checked;
+
+        // Validation
+        if (!name || !email || !password || !confirmPassword || !role) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        if (!hasAcceptedTerms) {
+            alert('You must accept the terms and conditions.');
+            return;
+        }
+
+        // Success
+        console.log('Registration successful:', { name, email, role });
+        alert('Registration successful! Redirecting to login...');
+        window.location.href = 'login.html';
+    });
+</script>
+</body>
+</html>
