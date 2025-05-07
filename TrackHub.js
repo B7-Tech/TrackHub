@@ -189,6 +189,7 @@ const animateOnScroll = () => {
 };
 
 // Initial animation state
+// Set initial animation state for target elements
 document.querySelectorAll('.feature-card, .team-member, .stat-item, .contact-form').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
@@ -200,6 +201,7 @@ window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
 // Animated Counter for About Stats
+// Function to animate counters (e.g., "100+", "75%")
 function animateStats() {
     const counters = document.querySelectorAll('.stat-number');
     counters.forEach(counter => {
