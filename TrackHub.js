@@ -135,6 +135,7 @@ function displayItems() {
     });
     
     // Display found items
+     // Display found items one by one
     sampleFoundItems.forEach(item => {
         const itemCard = createItemCard(item, 'found');
         foundItemsGrid.appendChild(itemCard);
@@ -142,6 +143,7 @@ function displayItems() {
 }
 
 // Create item card HTML
+ // Create card content with image, name, description, etc
 function createItemCard(item, type) {
     const card = document.createElement('div');
     card.className = 'item-card';
