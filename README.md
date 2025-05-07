@@ -12,7 +12,6 @@ Categorize items (electronics, books, IDs, etc.) <br>
 ### 🔍 Smart Search System <br>
 Filter by category, location, date, or keywords <br>
 Save frequent searches (like "AirPods case") <br>
-Map view of recent lost/found hotspots <br>
 
 ### 🔔 Smart Alerts <br>
 Get instant notifications when your lost item is found <br>
@@ -27,12 +26,6 @@ Report suspicious users to admins <br>
 ### ✅ Verification System <br>
 Answer security questions to claim items <br>
 Admin approval for valuable items <br>
-QR code scanning for campus property <br>
-
-### 🏆 Reward System<br>
-Earn points for returning items<br>
-Unlock achievement badges<br>
-Top helpers get featured monthly<br>
 
 ### 👨‍💻 Admin Features<br>
 Dashboard to manage all reports<br>
@@ -43,7 +36,12 @@ Generate monthly lost/found reports<br>
 Mobile app development<br>
 Campus kiosks for quick reporting<br>
 Integration with student ID system<br>
+Map view of recent lost/found hotspots <br>
 
+### 🏆 Future Plans for Reward System<br>
+Earn points for returning items<br>
+Unlock achievement badges<br>
+Top helpers get featured monthly<br>
 
 💡 Let's make our campus more connected!<br>
 Every returned item = one happy student! 😊
