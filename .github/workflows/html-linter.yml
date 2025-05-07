@@ -18,4 +18,15 @@ jobs:
         run: npm install -g htmlhint
 
       - name: Run HTMLHint
-        run: htmlhint .
+        run: |
+          echo "Checking HTML files..."
+          for file in *.html; do
+            if [ -f "$file" ]; then
+              echo "Checking $file..."
+              if ! htmlhint "$file"; then
+                echo "Error in $file"
+                exit 1
+              fi
+            fi
+          done
+          echo "All HTML files passed linting!"

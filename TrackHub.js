@@ -1,4 +1,4 @@
-// Sample data for demonstration
+// demonstration of a simple JavaScript application for a Lost and Found system
 const sampleLostItems = [
     {
         id: 1,
