@@ -43,7 +43,7 @@ Earn points for returning items<br>
 Unlock achievement badges<br>
 Top helpers get featured monthly<br>
 
-💡 Let's make our campus more connected!<br>
+### 💡 Let's make our campus more connected!<br>
 Every returned item = one happy student! 😊 <br>
 <br>
 A simple website to help people report and find lost or found items. Built using only HTML, CSS, and JavaScript — no backend or database.
