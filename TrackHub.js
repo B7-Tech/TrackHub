@@ -174,13 +174,14 @@ window.addEventListener('load', () => {
 });
 
 // Scroll Animations
+// Function to handle animations when elements come into view on scroll
 const animateOnScroll = () => {
     const elements = document.querySelectorAll('.feature-card, .team-member, .stat-item, .contact-form');
     
     elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
-        
+         // Check if element is inside the viewport
         if (elementTop < window.innerHeight && elementBottom > 0) {
             element.style.opacity = '1';
             element.style.transform = 'translateY(0)';
