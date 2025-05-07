@@ -206,6 +206,7 @@ function animateStats() {
         const text = counter.textContent.trim();
         let target = 0;
         let suffix = '';
+         // Determine target number and suffix (if + or %)
         if (text.endsWith('+')) {
             target = parseInt(text.replace(/\D/g, ''));
             suffix = '+';
