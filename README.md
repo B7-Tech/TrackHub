@@ -1,6 +1,7 @@
 A simple website to help people report and find lost or found items. Built using only HTML, CSS, and JavaScript .
 
-🌐 Features
+##🌐 Features
+
 📤 Submit details of lost or found items
 
 🔍 View items reported by others
@@ -11,17 +12,17 @@ A simple website to help people report and find lost or found items. Built using
 
 📦 Data stored temporarily using browser LocalStorage
 
-📁 Project Structure
-bash
-Copy
-Edit
+##📁 Project Structure
+
 lost-and-found/
 ├── index.html        # Main page
 ├── style.css         # Styling of the website
 ├── script.js         # JavaScript functionality
 └── README.md         # Project documentation
-🚀 How to Run
-Download or clone the repository:
+
+##🚀 How to Run
+
+Clone the repository in the termial of VsCode:
 
 open git bash
 ```
