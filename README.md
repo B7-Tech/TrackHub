@@ -30,14 +30,12 @@ git clone https://github.com/yourusername/lost-and-found.git
 ```
 
 Open index.html in your browser:
-
 Just double-click the file
+Or right-click and select "Open with browser", or go live 
 
-Or right-click and select "Open with browser"
+###💡 No server or setup required — it's a static site!
 
-💡 No server or setup required — it's a static site!
-
-✨ Future Ideas
+##✨ Future Ideas
 Add categories or filters
 
 Allow users to edit/delete posts
