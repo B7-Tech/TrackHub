@@ -121,6 +121,9 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         setTheme(e.matches);
     }
 });
+// =======================
+// DISPLAY LOST & FOUND ITEMS
+// =======================
 
 // Display sample items
 function displayItems() {
