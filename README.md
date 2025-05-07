@@ -17,16 +17,16 @@ Copy
 Edit
 lost-and-found/
 ├── index.html        # Main page
-├── style.css         # Styling
+├── style.css         # Styling of the website
 ├── script.js         # JavaScript functionality
 └── README.md         # Project documentation
 🚀 How to Run
 Download or clone the repository:
 
-bash
-Copy
-Edit
+open git bash
+```
 git clone https://github.com/yourusername/lost-and-found.git
+```
 
 Open index.html in your browser:
 
