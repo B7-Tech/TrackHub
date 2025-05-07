@@ -1,40 +1,47 @@
-# 📦 TrackHub
+# TrackHub <br>
+### 🔍 Lost & Found Campus Connect <br>
+A friendly platform to reunite lost items with their owners across campus <br>
 
-🔍 *Lost & Found Campus Connect*  
-A user-friendly platform designed to help students report, find, and reclaim lost items on campus — while building a stronger and more responsible community.
+✨ Core Features <br>
 
----
+### 📝 Easy Reporting <br>
+Simple form to report lost/found items <br>
+Upload photos + add detailed descriptions <br>
+Categorize items (electronics, books, IDs, etc.) <br>
 
-## ✨ Features
+### 🔍 Smart Search System <br>
+Filter by category, location, date, or keywords <br>
+Save frequent searches (like "AirPods case") <br>
 
-### 📝 Easy Reporting
-- Simple and intuitive form to report lost or found items.
-- Upload clear photos and provide detailed descriptions.
-- Categorize items: Electronics, Books, ID Cards, Accessories, etc.
-- Tag reports with campus locations for better discovery.
+### 🔔 Smart Alerts <br>
+Get instant notifications when your lost item is found <br>
+Set up custom alerts ("Notify me about lost black wallets") <br>
+Email + in-app notifications <br>
 
-### 🔍 Smart Search System
-- Filter by category, location, date, or keywords.
-- Save frequent searches (e.g., "AirPods case", "Wallet").
+### 💬 Secure Communication <br>
+Built-in anonymous messaging <br>
+Option to share contact info after verifying identity <br>
+Report suspicious users to admins <br>
 
+### ✅ Verification System <br>
+Answer security questions to claim items <br>
+Admin approval for valuable items <br>
 
----
+### 👨‍💻 Admin Features<br>
+Dashboard to manage all reports<br>
+Resolve disputes between users<br>
+Generate monthly lost/found reports<br>
 
-## 🚀 Future Plans
+### 📱 Future Plans<br>
+Mobile app development<br>
+Campus kiosks for quick reporting<br>
+Integration with student ID system<br>
+Map view of recent lost/found hotspots <br>
 
-- Cross-platform mobile app (iOS & Android).
-- Campus kiosks for quick offline reporting.
-- Student ID integration for faster verification.
-- AI photo recognition for smart item matching.
-- Expand to nearby campuses and public spaces.
-- Add multi-language support for diverse communities.
-- 
----
+### 🏆 Future Plans for Reward System<br>
+Earn points for returning items<br>
+Unlock achievement badges<br>
+Top helpers get featured monthly<br>
 
-## 💡 Vision
-
-We believe every lost item has a story — and a rightful owner.  
-*TrackHub* aims to bring students together through honesty, empathy, and shared responsibility.  
-Let’s make lost-and-found smarter, faster, and more connected.
-
-> *Every returned item = One happy student.*
+💡 Let's make our campus more connected!<br>
+Every returned item = one happy student! 😊
