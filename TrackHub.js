@@ -1,4 +1,8 @@
-// demonstration of a simple JavaScript application for a Lost and Found system
+// =======================
+// SAMPLE DATA ARRAYS
+// =======================
+// Array of lost items (for demonstration purposes)
+//// demonstration of a simple JavaScript application for a Lost and Found system
 const sampleLostItems = [
     {
         id: 1,
@@ -28,7 +32,7 @@ const sampleLostItems = [
         image: "https://via.placeholder.com/300x200?text=Student+ID"
     }
 ];
-
+// Array of found items (for demonstration purposes)
 const sampleFoundItems = [
     {
         id: 1,
@@ -63,6 +67,7 @@ const sampleFoundItems = [
 ];
 
 // DOM Elements
+// Grabbing elements from the HTML by their IDs
 const lostItemsGrid = document.getElementById('lost-items-grid');
 const foundItemsGrid = document.getElementById('found-items-grid');
 const reportLostBtn = document.getElementById('report-lost-btn');
@@ -78,15 +83,18 @@ const tabButtons = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 
 // Theme Toggle Functionality
+// Get the theme toggle button and icon element
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
 // Function to update theme icon
+// Apply or remove dark mode on the body and save preference to localStorage
 function updateThemeIcon(isDarkMode) {
     themeIcon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
 }
 
 // Function to set theme
+// When the theme toggle button is clicked, switch between light and dark mode
 function setTheme(isDarkMode) {
     document.body.classList.toggle('dark-mode', isDarkMode);
     updateThemeIcon(isDarkMode);
