@@ -164,12 +164,13 @@ function createItemCard(item, type) {
 }
 
 // Loading Animation
+// Hide loading animation after page has loaded
 window.addEventListener('load', () => {
     const loading = document.querySelector('.loading');
     if (loading) {
         setTimeout(() => {
             loading.classList.add('hidden');
-        }, 1000);
+        }, 1000);   // Hide after 1 second
     }
 });
 
