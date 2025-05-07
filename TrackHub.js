@@ -219,10 +219,12 @@ function animateStats() {
         }
         let current = 0;
         const increment = Math.ceil(target / 60);
+        
+        // Function to update the counter value
         function updateCounter() {
             if (current < target) {
                 current += increment;
-                if (current > target) current = target;
+                if (current > target) current = target;   // Avoid overshooting
                 counter.textContent = current + suffix;
                 requestAnimationFrame(updateCounter); //Smooth animation
             } else {
