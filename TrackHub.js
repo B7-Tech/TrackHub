@@ -215,10 +215,10 @@ function animateStats() {
         } else if (!isNaN(parseInt(text))) {
             target = parseInt(text);
         } else {
-            return;
+            return;  // Skip non-numeric counters
         }
         let current = 0;
-        const increment = Math.ceil(target / 60);
+        const increment = Math.ceil(target / 60); // Control animation speed
         
         // Function to update the counter value
         function updateCounter() {
